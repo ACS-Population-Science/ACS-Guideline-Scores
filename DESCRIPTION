@@ -1,0 +1,39 @@
+Package: ACSGuidelineScores
+Type: Package
+Title: Create American Cancer Society Guideline Score
+Version: 0.1.0
+Authors@R: c(
+    person(
+      "Kathryn", "Chiang",
+      email = "kathryn.chiang@cancer.org",
+      role = c("aut", "cre")
+    ),
+    person(
+      "Sicha", "Chantaprasopsuk",
+      email = "sicha.chantaprasopsuk@cancer.org",
+      role = c("aut")
+    ),
+    person(
+      "Ellen", "Mitchell",
+      email = "ellen.mitchell@cancer.org",
+      role = c("aut")
+    ),
+    person(
+      "James", "Hodge",
+      email = "james.hodge@cancer.org",
+      role = c("ctb", "com")
+    )
+  )
+Description: This package provides code to faciliate creation of the American
+    Cancer Society Guideline Score. The Guideline Score is intended to be a
+    compilation of lifestyle and behavioral factors associated with cancer risk.
+    The score consists of 4 subcomponents - body mass index, physical activity,
+    diet, and alcohol intake. Each component is derived and given a score with
+    the sum of the scores being the overall ACS Guideline Score. The overall
+    score has a range of 0-12 with higher scores indicating better overall diet
+    quality, lower BMI, less alcohol consumption, and higher levels of physical
+    activity.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.3
