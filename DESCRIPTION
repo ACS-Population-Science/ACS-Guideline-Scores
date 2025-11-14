@@ -24,15 +24,14 @@ Authors@R: c(
       role = c("ctb", "com")
     )
   )
-Description: This package provides code to faciliate creation of the American
-    Cancer Society Guideline Score. The Guideline Score is intended to be a
-    compilation of lifestyle and behavioral factors associated with cancer risk.
-    The score consists of 4 subcomponents - body mass index, physical activity,
-    diet, and alcohol intake. Each component is derived and given a score with
-    the sum of the scores being the overall ACS Guideline Score. The overall
-    score has a range of 0-12 with higher scores indicating better overall diet
-    quality, lower BMI, less alcohol consumption, and higher levels of physical
-    activity.
+Description: This package provides code to faciliate creation of the 2020 American
+    Cancer Society (ACS) Guideline for Cancer Prevention Score and 2022 ACS Guideline 
+    Score for Cancer Survivors. The ACS Guideline Scores evaluate lifestyle 
+    factors associated with cancer risk and cancer survival. The score consists of 
+    4 subcomponents - body mass index, physical activity, diet, and alcohol intake. 
+    Each component is derived and scaled from 0-2, then summed together to create 
+    the total ACS Guideline Score. The total ACS Guideline Score ranges from 0-8, 
+    with higher scores indicating better alignment to the ACS Guidelines.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

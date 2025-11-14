@@ -1,8 +1,12 @@
-#' Cancer Prevention Dietary Assessment Function
+#' Clean and create 2020 ACS Diet Score
 #'
-#' Evaluates dietary patterns based on the American Cancer Society diet
-#' recommendations (2020). Implements sex-stratified quartile ranking
-#' methodology with composite scoring across six dietary domains.
+#'@description
+#' This function cleans diet variables used to assess alignment with dietary
+#' guidance from the 2020 American Cancer Society Guidelines for Cancer Prevention.
+#' It implements sex-stratified quartile ranking methodology with composite
+#' scoring across six dietary domains to create the 2020 ACS Diet Score. It
+#' can then be used as a standalone score or as the diet subcomponent score in
+#' the total 2020 American Cancer Society Guideline Score.
 #'
 #' @param INTAKE_DATA Dataframe containing participant dietary intake records
 #' @param PARTICIPANT_ID Column name for unique participant identifier
@@ -62,8 +66,9 @@
 #'
 #' @details
 #' Scoring methodology uses sex-specific quartile distributions for most components.
-#' Higher scores indicate better adherence to the 2020 ACS Guidelines for Diet for Cancer Prevention.
 #' Total score ranges from 0-12 points across six evaluated domains.
+#' Higher scores indicate greater alignment with dietary guidance from the
+#' 2020 ACS Guidelines for Cancer Prevention.
 #'
 #' Component point allocations:
 #' - Total vegetables (amount + variety): 0-1.5
