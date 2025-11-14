@@ -1,9 +1,9 @@
-#' Clean and categorize BMI at two time-points
+#' Clean and categorize physical activity
 #'
 #' @description
-#' This function cleans moderate-vigorous physical activity variables
+#' This function cleans moderate-vigorous physical activity (MVPA) variables
 #' (in MET-hrs/week) used in the creation of the MVPA subcomponent score in the
-#' total American Cancer Society Guideline Score
+#' total 2020 American Cancer Society Guideline Score
 #'
 #' @param MVPA a numeric vector of MVPA values
 #'
@@ -35,11 +35,11 @@
 categorize_mvpa <- function(MVPA) {
 
   dplyr::case_when(
-    is.na(MVPA) ~ 9, #unknown/missing
-    MVPA == 0 ~ 1, #none
-    MVPA > 0 & MVPA < 7.5 ~ 2, #>0-<7.5 MET-hrs/week
-    MVPA >= 7.5 & MVPA < 15.0 ~ 3, #7.5-<15.0 MET-hrs/week
-    MVPA >= 15.0 ~ 4, #>=15.0 MET-hrs/week
+    is.na(MVPA) ~ 9, # unknown/missing
+    MVPA == 0 ~ 1, # none
+    MVPA > 0 & MVPA < 7.5 ~ 2, # >0-<7.5 MET-hrs/week (less than PA guidelines)
+    MVPA >= 7.5 & MVPA < 15.0 ~ 3, # 7.5-<15.0 MET-hrs/week (meeting PA guidelines)
+    MVPA >= 15.0 ~ 4, # >=15.0 MET-hrs/week (exceeding PA guidelines)
     TRUE ~ 9
   )
 }

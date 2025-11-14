@@ -3,7 +3,7 @@
 #' @description
 #' This function cleans body mass index variables from two time points
 #' used in the creation of the BMI subcomponent score in the total
-#' American Cancer Society Guideline Score
+#' 2020 American Cancer Society Guideline Score
 #'
 #' @param BMI a numeric vector of BMI values
 #'
