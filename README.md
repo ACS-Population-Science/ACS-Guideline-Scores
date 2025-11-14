@@ -1,18 +1,10 @@
----
-editor_options: 
-  markdown: 
-    wrap: sentence
----
-
 # ACS-Guideline-Scores
 
 *This is the in-development version. Please share comments, suggestions and errors/bugs found, either directly on the Github page or by emailing [kathryn.chiang\@cancer.org](mailto:kathryn.chiang@cancer.org){.email}.*
 
 ## Overview
 
-`ACS-Guideline-Scores` is an R package designed to provide user-friendly, streamlined methods for calculating the [2020 American Cancer Society (ACS) Guideline for Diet and Physical Activity for Cancer Prevention](https://acsjournals.onlinelibrary.wiley.com/doi/full/10.3322/caac.21591) and [2022 ACS Guideline for Nutrition and Physical Activity for Cancer Survivors](https://acsjournals.onlinelibrary.wiley.com/doi/10.3322/caac.21721).
-It contains functions for operationalizing the 2020 ACS Guideline Score and each of the four individual lifestyle behavior components that make up the total score: body weight (via body mass index, BMI), physical activity (PA), diet, and alcohol intake.
-The code provided here corresponds with *Scoring Alignment with the American Cancer Society Guidelines for Cancer Prevention and Cancer Survivors (Chiang et al., manuscript under review)*.
+`ACS-Guideline-Scores` is an R package designed to provide user-friendly, streamlined methods for calculating the [2020 American Cancer Society (ACS) Guideline for Diet and Physical Activity for Cancer Prevention](https://acsjournals.onlinelibrary.wiley.com/doi/full/10.3322/caac.21591) and [2022 ACS Guideline for Nutrition and Physical Activity for Cancer Survivors](https://acsjournals.onlinelibrary.wiley.com/doi/10.3322/caac.21721). It contains functions for operationalizing the 2020 ACS Guideline Score and each of the four individual lifestyle behavior components that make up the total score: body weight (via body mass index, BMI), physical activity (PA), diet, and alcohol intake. The code provided here corresponds with *Scoring Alignment with the American Cancer Society Guidelines for Cancer Prevention and Cancer Survivors (Chiang et al., manuscript under review)*.
 
 ### What are the `ACS-Guideline-Scores`?
 
@@ -30,15 +22,13 @@ Current use of the ACS Guideline Scores has predominately taken place with the [
 
 The `ACS-Guideline-Scores` package preforms calculations in two steps:
 
-1.  Computation of each individual lifestyle component: body weight (via body mass index, BMI), physical activity (PA), diet, and alcohol intake.
-    This includes prepping each variable and scaling it from 0-2.
+1.  Computation of each individual lifestyle component: body weight (via body mass index, BMI), physical activity (PA), diet, and alcohol intake. This includes prepping each variable and scaling it from 0-2.
 
 2.  Computation of the total ACS Guideline Score (0-8).
 
 ## Notes before applying `ACS-Guideline-Scores` to your data
 
-All four individual lifestyle component scores can be used in isolation (on a scale of 0-2) or summed together as the total ACS Guideline Score (0-8).
-Below are considerations for each individual component:
+All four individual lifestyle component scores can be used in isolation (on a scale of 0-2) or summed together as the total ACS Guideline Score (0-8). Below are considerations for each individual component:
 
 **Body Mass Index (BMI, kg/m**<sup>2<sub/>)
 
@@ -62,8 +52,7 @@ Below are considerations for each individual component:
 
 -   To ensure diet receives the same weight as the other factors when part of the 2020 ACS Guideline Score, rescaling should be applied on a 0-to-2-point scale, based on the approximate tertile distribution of the diet score in the study population.
 
--   Therefore, the function to calculate diet is in two parts.
-    Part 1 calculates the ACS Diet Score (0-12) across quartiles and part 2 rescales it to tertiles on a scale of 0-2.
+-   Therefore, the function to calculate diet is in two parts. Part 1 calculates the ACS Diet Score (0-12) across quartiles and part 2 rescales it to tertiles on a scale of 0-2.
 
 -   For a detailed example of how the 2020 ACS Diet Score is calculated in the CPS-II cohort, please refer to: *coming soon*
 
@@ -87,9 +76,6 @@ Below are considerations for each individual component:
 
 ## Future Plans & Updates as of 11/14/2025
 
-This repo is in progress and we appreciate your patience as we thoroughly develop it.
-In our initial steps, we plan to publish functions and code for calculating the 2020 ACS Guideline Score for Cancer Prevention.
-Following this, we hope to provide functions for calculating the 2022 ACS Guideline Score for Cancer Survivors and eventually strive to provide worked examples to increase reproducibility across cohorts.
+This repo is in progress and we appreciate your patience as we thoroughly develop it. In our initial steps, we plan to publish functions and code for calculating the 2020 ACS Guideline Score for Cancer Prevention. Following this, we hope to provide functions for calculating the 2022 ACS Guideline Score for Cancer Survivors and eventually strive to provide worked examples to increase reproducibility across cohorts.
 
-In the meantime, thank you for your interest!
-We are excited to bring you the completed `ACS-Guideline-Scores` repo very soon!
+In the meantime, thank you for your interest! We are excited to bring you the completed `ACS-Guideline-Scores` repo very soon!
