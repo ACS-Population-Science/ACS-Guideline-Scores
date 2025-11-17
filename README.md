@@ -1,6 +1,6 @@
 # ACS-Guideline-Scores
 
-*This is the in-development version. Please share comments, suggestions and errors/bugs found, either directly on the Github page or by emailing [kathryn.chiang\@cancer.org](mailto:kathryn.chiang@cancer.org){.email}.*
+*This is the in-development version. Please share comments, suggestions and errors/bugs found, either directly on the Github page or by emailing [kathryn.chiang\@cancer.org](mailto:kathryn.chiang@cancer.org).*
 
 ## Overview
 
