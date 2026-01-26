@@ -47,9 +47,9 @@ calculate_acs_score <- function(df) {
         TRUE ~ as.numeric(NA)
       ),
       ACS_DIET = dplyr::case_when(
-        DIETCAT == 1 ~ 0, #tertile 1 (lowest diet scores)
-        DIETCAT == 2 ~ 1, #tertile 2 (mid diet scores)
-        DIETCAT == 3 ~ 2, #tertile 3 (highest diet scores)
+        TOTAL_DIETSC <= quantile(TOTAL_DIETSC, 1/3, na.rm = TRUE) ~ 0,  #tertile 1 (lowest diet scores)
+        TOTAL_DIETSC <= quantile(TOTAL_DIETSC, 2/3, na.rm = TRUE) ~ 1, #tertile 2 (mid diet scores)
+        TOTAL_DIETSC > quantile(TOTAL_DIETSC, 2/3, na.rm = TRUE) ~ 2, #tertile 3 (highest diet scores)
         TRUE ~ as.numeric(NA)
       ),
       ACS_ALC = dplyr::case_when(
