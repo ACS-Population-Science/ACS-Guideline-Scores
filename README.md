@@ -36,6 +36,8 @@ All four individual lifestyle component scores can be used in isolation (on a sc
 
 -   The BMI component is based on BMI measurements across <ins>**two timepoints**</ins>; instructions for application when only one BMI measurement is available is provided by Chiang et al (*under review*).
 
+-   Users should be running the categorize_BMI twice, labeling the earlier timepoint: 'BMICAT_PRE' and the baseline timepoint: 'BMICAT_BASE' in order to use in the final calculate_acs_score function.
+
 **Physical Activity (PA)**
 
 -   The function for classifying moderate-to-vigorous physical activity (MVPA) is under the assumption that your variables for PA are already calculated in MET-hours/week according to the [Compendium of Physical Activity](https://pacompendium.com/).
