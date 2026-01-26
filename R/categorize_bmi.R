@@ -12,7 +12,6 @@
 #'   \item `1` = Normal weight (18.5-25 kg/m^2)
 #'   \item `2` = Overweight (25-<30 kg/m^2)
 #'   \item `3` = Obese (>=30 kg/m^2)
-#'   \item `9` = Missing
 #' }
 #'
 #' @examples
@@ -31,11 +30,10 @@ categorize_bmi <- function(BMI) {
 
   #categorize BMI
   dplyr::case_when(
-    is.na(BMI) | BMI < 18.5 ~ 9, #underweight are excluded
     BMI >= 18.5 & BMI < 25.0 ~ 1, #normal weight
     BMI >= 25.0 & BMI < 30.0 ~ 2, #overweight
     BMI >= 30.0 ~ 3, #obese
-    TRUE ~ 9
+    TRUE ~ NA
   )
 
 }

@@ -13,7 +13,6 @@
 #'   \item `2` = 1 drink per day or less
 #'   \item `3` = >1 to 2 drinks per day
 #'   \item `4` = More than 2 drinks per day
-#'   \item `9` = Missing
 #' }
 #'
 #' @examples
@@ -33,11 +32,10 @@
 
 categorize_alc <- function(ALC) {
   dplyr::case_when(
-    is.na(ALC) ~ 9, # unknown/missing
     ALC == 0 ~ 1, # none
     ALC > 0 & ALC <= 1 ~ 2, # 1 drink per day or less
     ALC > 1 & ALC <= 2 ~ 3, # >1 to 2 drinks per day
     ALC > 2 ~ 4, # more than 2 drinks per day
-    TRUE ~ 9
+    TRUE ~ NA
   )
 }

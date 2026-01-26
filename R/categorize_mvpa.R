@@ -13,7 +13,6 @@
 #'   \item `2` = >0 - <7.5 MET-hrs/week
 #'   \item `3` = 7.5 - <15.0 MET-hrs/week
 #'   \item `4` = >=15.0 MET-hrs/week
-#'   \item `9` = Missing
 #' }
 #'
 #' @examples
@@ -35,11 +34,10 @@
 categorize_mvpa <- function(MVPA) {
 
   dplyr::case_when(
-    is.na(MVPA) ~ 9, # unknown/missing
     MVPA == 0 ~ 1, # none
     MVPA > 0 & MVPA < 7.5 ~ 2, # >0-<7.5 MET-hrs/week (less than PA guidelines)
     MVPA >= 7.5 & MVPA < 15.0 ~ 3, # 7.5-<15.0 MET-hrs/week (meeting PA guidelines)
     MVPA >= 15.0 ~ 4, # >=15.0 MET-hrs/week (exceeding PA guidelines)
-    TRUE ~ 9
+    TRUE ~ NA
   )
 }
