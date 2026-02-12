@@ -10,7 +10,7 @@
 #'
 #' @param INTAKE_DATA Dataframe containing participant dietary intake records
 #' @param PARTICIPANT_ID Column name for unique participant identifier
-#' @param SEX Column name indicating sex (1=male, 2=female)
+#' @param SEX Column name indicating sex (0 = female, 1 = male)
 #' @param VEG_DS Daily servings of vegetables excluding white potatoes (numeric).
 #'   Should include: tomatoes (including V8 juice, tomato sauce), tofu/soybeans,
 #'   string beans, broccoli, cabbage/coleslaw, cauliflower, brussels sprouts,
@@ -253,17 +253,12 @@ calculate_acs_diet_score <- function(
         SUBSC_WGRAIN + SUBSC_RPMEAT +
         SUBSC_HPFRG + SUBSC_SSB
     ) |>
-    dplyr::select(
-      PARTICIPANT_ID = .ID,
-      SEX = .SEX,
-      TOTAL_DIETSC,
-      SUBSC_VEGTOT,
-      SUBSC_FRUITTOT,
-      SUBSC_WGRAIN,
-      SUBSC_RPMEAT,
-      SUBSC_HPFRG,
-      SUBSC_SSB
-    )
+    dplyr::select(-c(
+      .ID, .SEX, .VEG_SERVINGS, .VEG_VARIETY,
+      .FRUIT_SERVINGS, .FRUIT_VARIETY, .WGRAIN_SERVINGS,
+      .MEAT_RP_SERVINGS, .HPF_RG_RATIO, .SSB_SERVINGS,
+      SUBSC_VEG, SUBSC_VEGVAR, SUBSC_FRUIT, SUBSC_FRUITVAR
+    ))
 
   return(SCORED_DATA)
 }
