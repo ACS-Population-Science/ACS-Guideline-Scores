@@ -10,7 +10,7 @@
 #'
 #' @param INTAKE_DATA Dataframe containing participant dietary intake records
 #' @param PARTICIPANT_ID Column name for unique participant identifier
-#' @param SEX Column name indicating sex (1=male, 2=female)
+#' @param SEX Column name indicating sex (0 = female, 1 = male)
 #' @param VEG_DS Daily servings of vegetables excluding white potatoes (numeric).
 #'   Should include: tomatoes (including V8 juice, tomato sauce), tofu/soybeans,
 #'   string beans, broccoli, cabbage/coleslaw, cauliflower, brussels sprouts,
