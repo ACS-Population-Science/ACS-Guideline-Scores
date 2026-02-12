@@ -54,13 +54,13 @@ calculate_acs_score <- function(df) {
       ),
       ACS_ALC = dplyr::case_when(
         # Females (SEX = 0)
-        SEX == 0 & ALCCAT == 0 ~ 2,    # no alcohol
-        SEX == 0 & ALCCAT == 1 ~ 1,    # >0 to <=1 drinks/day
-        SEX == 0 & ALCCAT > 1 ~ 0,     # >1 drinks/day
+        SEX == 0 & ALCCAT == 1 ~ 2,    # no alcohol
+        SEX == 0 & ALCCAT == 2 ~ 1,    # >0 to <=1 drinks/day
+        SEX == 0 & ALCCAT > 2 ~ 0,     # >1 drinks/day
         # Males (SEX = 1)
-        SEX == 1 & ALCCAT == 0 ~ 2,    # no alcohol
-        (SEX == 1 & ALCCAT == 1) | (SEX == 1 & ALCCAT == 2) ~ 1,  # >0 to <=2 drinks/day
-        SEX == 1 & ALCCAT > 2 ~ 0,     # >2 drinks/day
+        SEX == 1 & ALCCAT == 1 ~ 2,    # no alcohol
+        (SEX == 1 & ALCCAT == 2) | (SEX == 1 & ALCCAT == 3) ~ 1,  # >0 to <=2 drinks/day
+        SEX == 1 & ALCCAT > 3 ~ 0,     # >2 drinks/day
         TRUE ~ as.numeric(NA)
       ),
 
