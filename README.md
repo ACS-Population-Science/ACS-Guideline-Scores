@@ -4,7 +4,7 @@
 
 ## Overview
 
-`ACS-Guideline-Scores` is an R package designed to provide user-friendly, streamlined methods for calculating the [2020 American Cancer Society (ACS) Guideline for Diet and Physical Activity for Cancer Prevention](https://acsjournals.onlinelibrary.wiley.com/doi/full/10.3322/caac.21591) and [2022 ACS Guideline for Nutrition and Physical Activity for Cancer Survivors](https://acsjournals.onlinelibrary.wiley.com/doi/10.3322/caac.21721). It contains functions for operationalizing the 2020 ACS Guideline Score and each of the four individual lifestyle behavior components that make up the total score: body weight (via body mass index, BMI), physical activity (PA), diet, and alcohol intake. The code provided here corresponds with *Scoring Alignment with the American Cancer Society Guidelines for Cancer Prevention and Cancer Survivors (Chiang et al., manuscript under review)*.
+`ACS-Guideline-Scores` is an R package designed to provide user-friendly, streamlined methods for calculating the [2020 American Cancer Society (ACS) Guideline for Diet and Physical Activity for Cancer Prevention](https://acsjournals.onlinelibrary.wiley.com/doi/full/10.3322/caac.21591) and [2022 ACS Guideline for Nutrition and Physical Activity for Cancer Survivors](https://acsjournals.onlinelibrary.wiley.com/doi/10.3322/caac.21721). It contains functions for operationalizing the 2020 ACS Guideline Score and each of the four individual lifestyle behavior components that make up the total score: body weight (via body mass index, BMI), physical activity (PA), diet, and alcohol intake. The code provided here corresponds with [*Scoring Alignment with the American Cancer Society Guidelines for Cancer Prevention and Cancer Survivors*](http://dx.doi.org/10.1002/cncr.70270).
 
 ### What are the `ACS-Guideline-Scores`?
 
@@ -34,9 +34,9 @@ All four individual lifestyle component scores can be used in isolation (on a sc
 
 -   A BMI variable must be pre-calculated using appropriate height and weight measurements.
 
--   The BMI component is based on BMI measurements across <ins>**two timepoints**</ins>; instructions for application when only one BMI measurement is available is provided by Chiang et al (*under review*).
+-   The BMI component is based on BMI measurements across <ins>**two timepoints**</ins>; instructions for application when only one BMI measurement is available is provided by [Chiang et al (2026)](http://dx.doi.org/10.1002/cncr.70270).
 
--   Users should be running the categorize_BMI twice, labeling the earlier timepoint: 'BMICAT_PRE' and the baseline timepoint: 'BMICAT_BASE' in order to use in the final calculate_acs_score function.
+-   Users should be running categorize_BMI twice, labeling the earlier timepoint: 'BMICAT_PRE' and the baseline timepoint: 'BMICAT_BASE' in order to use in the final calculate_acs_score function.
 
 **Physical Activity (PA)**
 
@@ -76,8 +76,44 @@ All four individual lifestyle component scores can be used in isolation (on a sc
 
 *Note: To promote research translation and comparability of research findings, we ask that clear documentation of any adaptations be shared should you decide to utilize the ACS Guideline Scores in your studies.*
 
-## Future Plans & Updates as of 11/14/2025
+## Installation
 
-This repo is in progress and we appreciate your patience as we thoroughly develop it. In our initial steps, we plan to publish functions and code for calculating the 2020 ACS Guideline Score for Cancer Prevention. Following this, we hope to provide functions for calculating the 2022 ACS Guideline Score for Cancer Survivors and eventually strive to provide worked examples to increase reproducibility across cohorts.
+Currently, `ACS-Guideline-Scores` is not available on [CRAN].
+
+To install from this Github repository, use the `remotes` or `devtools` package. Below is an example using `remotes`:
+
+```{r}
+# Install/load packages
+install.packages("remotes") 
+
+# Install the package from GitHub
+remotes::install_github("ACS-Population-Science/ACS-Guideline-Scores") 
+```
+
+You may receive the message below. If this happens, try to enter 1 in the terminal. If not successful, then try to enter 2. **It will take a while if you are a new R user.**
+
+```         
+  These packages have more recent versions available.   
+  It is recommended to update all of them.   
+  Which would you like to update?    
+  
+  1: All   
+  2: CRAN packages only   
+  3: None   
+  4: tzdb  (0.3.0 -> 0.4.0) [CRAN]   
+  5: vroom (1.6.1 -> 1.6.3) [CRAN]
+```
+
+Load library:
+
+```{r}
+library(ACSGuidelineScores) 
+```
+
+After this step, you should be good to go and ready to use the functions within the `ACS-Guideline-Scores` package.
+
+## Future Plans & Updates as of 2/16/2026
+
+This repo is in progress and we appreciate your patience as we thoroughly develop it. In our initial steps, we have published functions and code for calculating the 2020 ACS Guideline Score for Cancer Prevention. Following this, we strive to provide worked examples to increase reproducibility across cohorts and eventually, we may provide functions for calculating the 2022 ACS Guideline Score for Cancer Survivors
 
 In the meantime, thank you for your interest! We are excited to bring you the completed `ACS-Guideline-Scores` repo very soon!
