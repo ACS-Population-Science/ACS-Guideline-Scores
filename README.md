@@ -36,8 +36,6 @@ All four individual lifestyle component scores can be used in isolation (on a sc
 
 -   The BMI component is based on BMI measurements across <ins>**two timepoints**</ins>; instructions for application when only one BMI measurement is available is provided by [Chiang et al (2026)](http://dx.doi.org/10.1002/cncr.70270).
 
--   Users should be running categorize_BMI twice, labeling the earlier timepoint: 'BMICAT_PRE' and the baseline timepoint: 'BMICAT_BASE' in order to use in the final calculate_acs_score function.
-
 **Physical Activity (PA)**
 
 -   The function for classifying moderate-to-vigorous physical activity (MVPA) is under the assumption that your variables for PA are already calculated in MET-hours/week according to the [Compendium of Physical Activity](https://pacompendium.com/).
@@ -53,10 +51,6 @@ All four individual lifestyle component scores can be used in isolation (on a sc
 -   The ACS Diet Score ranges from 0-12, with higher scores indicating greater alignment to the dietary guidelines.
 
 -   To ensure diet receives the same weight as the other factors when part of the 2020 ACS Guideline Score, rescaling should be applied on a 0-to-2-point scale, based on the approximate tertile distribution of the diet score in the study population.
-
--   Therefore, the function to calculate diet is in two parts. Part 1 calculates the ACS Diet Score (0-12) across quartiles and part 2 rescales it to tertiles on a scale of 0-2.
-
--   For a detailed example of how the 2020 ACS Diet Score is calculated in the CPS-II cohort, please refer to: *coming soon*
 
 **Alcohol Intake**
 
