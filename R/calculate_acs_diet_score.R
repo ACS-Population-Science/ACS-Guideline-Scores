@@ -52,7 +52,7 @@
 #'   carbonated beverages with sugar (Mt Dew, 7-Up), punch/lemonade/non-carbonated
 #'   fruit drinks, sugar-sweetened iced tea
 #'
-#' @return Dataframe with participant IDs, sex, overall score, and six component
+#' @return Dataframe with participant IDs, sex, overall score, and ten component
 #'   sub-scores:
 #' \itemize{
 #'   \item `TOTAL_DIETSC` - Total diet score; range 0-12
@@ -61,7 +61,7 @@
 #'   \item `SUBSC_VEGVAR` - Vegetable variety (component of SUBSC_VEGTOT): 0-0.75
 #'   \item `SUBSC_FRUITTOT` - Total fruits (amount + variety): 0-1.5
 #'   \item `SUBSC_FRUITSERV` - Fruit consumption (component of SUBSC_FRUITTOT): 0-0.75
-#'   \item `SUBSC_FRUITSERV` - Fruit variety (component of SUBSC_FRUITTOT): 0-0.75
+#'   \item `SUBSC_FRUITVAR` - Fruit variety (component of SUBSC_FRUITTOT): 0-0.75
 #'   \item `SUBSC_WGRAIN` - Whole grains: 0-3
 #'   \item `SUBSC_RPMEAT` - Red/processed meat: 0-3 (reverse scored)
 #'   \item `SUBSC_HPFRG` - Highly-processed foods and refined grains (HPFRG): 0-1.5 (reverse scored)
