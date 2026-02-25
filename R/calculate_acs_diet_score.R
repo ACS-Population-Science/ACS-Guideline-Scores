@@ -57,7 +57,11 @@
 #' \itemize{
 #'   \item `TOTAL_DIETSC` - Total diet score; range 0-12
 #'   \item `SUBSC_VEGTOT` - Total vegetables (amount + variety): 0-1.5
+#'   \item `SUBSC_VEGSERV` - Vegetable consumption (component of SUBSC_VEGTOT): 0-0.75
+#'   \item `SUBSC_VEGVAR` - Vegetable variety (component of SUBSC_VEGTOT): 0-0.75
 #'   \item `SUBSC_FRUITTOT` - Total fruits (amount + variety): 0-1.5
+#'   \item `SUBSC_FRUITSERV` - Fruit consumption (component of SUBSC_FRUITTOT): 0-0.75
+#'   \item `SUBSC_FRUITSERV` - Fruit variety (component of SUBSC_FRUITTOT): 0-0.75
 #'   \item `SUBSC_WGRAIN` - Whole grains: 0-3
 #'   \item `SUBSC_RPMEAT` - Red/processed meat: 0-3 (reverse scored)
 #'   \item `SUBSC_HPFRG` - Highly-processed foods and refined grains (HPFRG): 0-1.5 (reverse scored)
@@ -222,9 +226,9 @@ calculate_acs_diet_score <- function(
     dplyr::group_by(.SEX) |>
     dplyr::mutate(
       # SUB-SCORES FOR POSITIVELY-SCORED COMPONENTS (VEGETABLES, FRUITS, AND WHOLE GRAINS) USING SEX-STRATIFIED QUARTILES
-      SUBSC_VEG = SCORE_POS_VEGFRU(.VEG_SERVINGS),
+      SUBSC_VEGSERV = SCORE_POS_VEGFRU(.VEG_SERVINGS),
       SUBSC_VEGVAR = SCORE_POS_VEGFRU(.VEG_VARIETY),
-      SUBSC_FRUIT = SCORE_POS_VEGFRU(.FRUIT_SERVINGS),
+      SUBSC_FRUITSERV = SCORE_POS_VEGFRU(.FRUIT_SERVINGS),
       SUBSC_FRUITVAR = SCORE_POS_VEGFRU(.FRUIT_VARIETY),
       SUBSC_WGRAIN = SCORE_POS_WGRAIN(.WGRAIN_SERVINGS),
 
@@ -243,10 +247,10 @@ calculate_acs_diet_score <- function(
       ),
 
       # COMBINE VEGETABLE SUB-SCORES (AMOUNT + VARIETY SUB-SCORES), 0-1.5 TOTAL POINTS
-      SUBSC_VEGTOT = SUBSC_VEG + SUBSC_VEGVAR,
+      SUBSC_VEGTOT = SUBSC_VEGSERV + SUBSC_VEGVAR,
 
       # COMBINE FRUIT SUB-SCORES (AMOUNT + VARIETY SUB-SCORES), 0-1.5 TOTAL POINTS
-      SUBSC_FRUITTOT = SUBSC_FRUIT + SUBSC_FRUITVAR,
+      SUBSC_FRUITTOT = SUBSC_FRUITSERV + SUBSC_FRUITVAR,
 
       # TOTAL SCORE CALCULATED FROM SUB-SCORES
       TOTAL_DIETSC = SUBSC_VEGTOT + SUBSC_FRUITTOT +
@@ -256,8 +260,7 @@ calculate_acs_diet_score <- function(
     dplyr::select(-c(
       .ID, .SEX, .VEG_SERVINGS, .VEG_VARIETY,
       .FRUIT_SERVINGS, .FRUIT_VARIETY, .WGRAIN_SERVINGS,
-      .MEAT_RP_SERVINGS, .HPF_RG_RATIO, .SSB_SERVINGS,
-      SUBSC_VEG, SUBSC_VEGVAR, SUBSC_FRUIT, SUBSC_FRUITVAR
+      .MEAT_RP_SERVINGS, .HPF_RG_RATIO, .SSB_SERVINGS
     ))
 
   return(SCORED_DATA)
